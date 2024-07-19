@@ -30,15 +30,15 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <td><?= $user['id'] ?></td>
             <td><?= $user['placa'] ?></td>
             <td><?= $user['modelo'] ?></td>
-            <td><?= $user['nome_cliente'] ?></td>
+            <td><?= $user['cliente'] ?></td>
             <td><?= $user['email'] ?></td>
             <td><?= $user['telefone'] ?></td>
             
             
             
             <td>
-                <a href="updateUsers.php?id=<?= $user['id'] ?>">Editar</a>
-                <a href="deleteUser.php?id=<?= $user['id'] ?>">Deletar</a>
+                <a href="updateC.php?id=<?= $user['id'] ?>">Editar</a>
+                <a href="deleteC.php?id=<?= $user['id'] ?>">Deletar</a>
             </td>
         </tr>
         

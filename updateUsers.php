@@ -10,7 +10,7 @@ if ($id) {
         $senha = isset($_POST['senha']) ? $_POST['senha'] : '';
 
         if (!empty($nome) && !empty($email) && !empty($senha))  {  
-            $sql = "UPDATE tbl_usuario SET nome = :nome, email = :email, senha = :senha WHERE id = :id";  // Adicionei `senha`
+            $sql = "UPDATE tbl_usuario SET nome = :nome, email = :email, senha = :senha WHERE id = :id";  
             $stmt = $conec->prepare($sql);
             $stmt->bindValue(':nome', $nome);
             $stmt->bindValue(':email', $email);
@@ -46,7 +46,7 @@ if ($id) {
     <form method="POST">
         <label>Nome: <input type="text" name="nome" value="<?= isset($user['nome']) ? $user['nome'] : ''; ?>" required></label><br>
         <label>Email: <input type="email" name="email" value="<?= isset($user['email']) ? $user['email'] : ''; ?>" required></label><br>
-        <label>Senha: <input type="password" name="senha" value="<?= isset($user['senha']) ? $user['senha'] : ''; ?>" required></label><br> <!-- Corrigi o tipo de campo -->
+        <label>Senha: <input type="password" name="senha" value="<?= isset($user['senha']) ? $user['senha'] : ''; ?>" required></label><br> 
         <button type="submit">Atualizar</button>
     </form>
     <a href="index.php">Voltar</a>
